@@ -1,6 +1,8 @@
 site_name: aric6494's notes
 nav:
-  - Home: index.md
-  - About: about.md
+  - 介绍: index.md
+  - 英语:
+      - 语法:
+          - 动词: english/grammar/动词.md
 
 theme: readthedocs
