@@ -1,0 +1,6 @@
+site_name: aric6494's notes
+nav:
+  - Home: index.md
+  - About: about.md
+
+theme: readthedocs
