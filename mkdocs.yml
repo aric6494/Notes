@@ -4,5 +4,7 @@ nav:
   - 英语:
       - 语法:
           - 动词: english/grammar/动词.md
+  - Termux:
+      - Termux/termux.md 
 
 theme: readthedocs
