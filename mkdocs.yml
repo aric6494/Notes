@@ -7,4 +7,4 @@ nav:
   - Termux:
       - Termux/termux.md 
 
-theme: readthedocs
+theme: material

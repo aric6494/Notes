@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Termux 的图形化界面 - aric6494's notes</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Termux \u7684\u56fe\u5f62\u5316\u754c\u9762";
+        var mkdocs_page_input_path = "Termux\\termux.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> aric6494's notes
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">介绍</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">英语</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >语法</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../english/grammar/%E5%8A%A8%E8%AF%8D/">动词</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Termux</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Termux 的图形化界面</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1">1. 本地环境安装图形化界面</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-proot">2. proot 环境安装图形化界面</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#21-sudo">2.1 配置 sudo</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#termux_1">Termux 主题美化</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_1">更改字体</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#oh-my-zsh">安装 Oh My Zsh</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#powerlevel10k">配置 powerlevel10k 主题</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_2">安装插件</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#zsh-autosuggestions">zsh-autosuggestions</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#zsh-syntax-highlighting">zsh-syntax-highlighting</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_3">常用包安装</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#manim">Manim</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mpv">mpv</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#cava">cava（音频可视化）</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#yt-dlp">yt-dlp</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">aric6494's notes</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Termux</li>
+      <li class="breadcrumb-item active">Termux 的图形化界面</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="termux">Termux 的图形化界面</h1>
+<p>推荐 GitHub 上的一个 Termux 图形化界面项目：</p>
+<p>项目地址：https://github.com/LinuxDroidMaster/Termux-Desktops</p>
+<p>该项目提供三种方式安装图形化界面：</p>
+<ol>
+<li>Termux 本地环境</li>
+<li>proot 环境</li>
+<li>chroot 环境（需要 root）</li>
+</ol>
+<p>本文仅介绍前两种方式，使用的软件为 <strong>Termux: X11</strong>。</p>
+<h4 id="1">1. 本地环境安装图形化界面</h4>
+<pre><code class="language-bash">pkg update
+pkg install x11-repo
+pkg install termux-x11-nightly
+pkg install pulseaudio  ## 在图形界面中播放音频
+</code></pre>
+<p>安装 XFCE（轻量级桌面环境）：</p>
+<pre><code class="language-bash">pkg install xfce4
+</code></pre>
+<ul>
+<li>安装 Firefox 浏览器：</li>
+</ul>
+<p><code>bash
+  pkg install tur-repo
+  pkg install firefox</code></p>
+<ul>
+<li>安装 VS Code：</li>
+</ul>
+<p><code>bash
+  pkg install tur-repo
+  pkg install code-oss</code></p>
+<p>下载桌面环境启动脚本：</p>
+<pre><code class="language-bash">cd ~
+pkg install wget
+wget https://raw.githubusercontent.com/LinuxDroidMaster/Termux-Desktops/main/scripts/termux_native/startxfce4_termux.sh
+</code></pre>
+<p>启动桌面环境：</p>
+<pre><code class="language-bash">chmod +x startxfce4_termux.sh
+./startxfce4_termux.sh
+</code></pre>
+<h4 id="2-proot">2. proot 环境安装图形化界面</h4>
+<pre><code class="language-bash">pkg update
+pkg install x11-repo
+pkg install termux-x11-nightly
+pkg install pulseaudio
+</code></pre>
+<p>以 Debian 为例：</p>
+<pre><code class="language-bash">pkg install proot-distro
+proot-distro install debian
+proot-distro login debian
+</code></pre>
+<h6 id="21-sudo">2.1 配置 sudo</h6>
+<pre><code class="language-bash">apt update &amp;&amp; apt install -y sudo
+sudo ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime  ## 设置时区
+</code></pre>
+<p>创建普通用户 <code>droidmaster</code>：</p>
+<pre><code class="language-bash">useradd -m droidmaster
+passwd droidmaster      ## 设置密码（输入不可见）
+usermod -aG sudo droidmaster
+</code></pre>
+<p>编辑 sudoers：</p>
+<pre><code class="language-bash">apt install vim
+vim /etc/sudoers  ## 在文件末尾添加:
+## droidmaster 用户免密码执行所有命令
+ droidmaster ALL=(ALL) NOPASSWD: ALL
+</code></pre>
+<p>切换到新用户：</p>
+<pre><code class="language-bash">su - droidmaster
+</code></pre>
+<p>安装 XFCE：</p>
+<pre><code class="language-bash">sudo apt install -y xfce4
+</code></pre>
+<p>退出 proot 环境并下载启动脚本：</p>
+<pre><code class="language-bash">exit
+wget https://raw.githubusercontent.com/LinuxDroidMaster/Termux-Desktops/main/scripts/proot_debian/startxfce4_debian.sh
+chmod +x startxfce4_debian.sh
+</code></pre>
+<p>启动桌面环境：</p>
+<pre><code class="language-bash">./startxfce4_debian.sh
+</code></pre>
+<p>更多安装方式请移步 GitHub 仓库查看。</p>
+<h2 id="termux_1">Termux 主题美化</h2>
+<h4 id="_1">更改字体</h4>
+<ol>
+<li>
+<p>前往 https://www.nerdfonts.com/font-downloads 下载字体（示例：<code>0xProtoNerdFont-Regular.ttf</code>）。</p>
+</li>
+<li>
+<p>创建字体文件夹：</p>
+</li>
+</ol>
+<p><code>bash
+   mkdir -p ~/.termux/fonts</code></p>
+<ol>
+<li>复制字体到文件夹并重命名：</li>
+</ol>
+<p><code>bash
+   cp 0xProtoNerdFont-Regular.ttf ~/.termux/fonts/
+   mv ~/.termux/fonts/0xProtoNerdFont-Regular.ttf ~/.termux/font.ttf</code></p>
+<ol>
+<li>重启 Termux，测试 Nerd 字体：</li>
+</ol>
+<p><code>bash
+   echo -e "\ue0b0 \u26a1 \ue709"</code></p>
+<h4 id="oh-my-zsh">安装 Oh My Zsh</h4>
+<p>Oh My Zsh 是基于 Zsh 的配置框架，用于增强和扩展 Shell。</p>
+<pre><code class="language-bash">pkg install zsh
+chsh -s zsh        ## 设置 zsh 为默认 Shell
+</code></pre>
+<p>复制 <code>.bashrc</code> 内容到 <code>.zshrc</code>，然后安装 Oh My Zsh：</p>
+<pre><code class="language-bash">sh -c &quot;$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)&quot;
+## 国内用户可替换为:
+sh -c &quot;$(wget -O - https://install.ohmyz.sh)&quot;
+</code></pre>
+<h4 id="powerlevel10k">配置 powerlevel10k 主题</h4>
+<pre><code class="language-bash">git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+</code></pre>
+<p>编辑 <code>~/.zshrc</code>：</p>
+<pre><code class="language-bash">ZSH_THEME=&quot;powerlevel10k/powerlevel10k&quot;
+source ~/.zshrc
+</code></pre>
+<h4 id="_2">安装插件</h4>
+<h6 id="zsh-autosuggestions">zsh-autosuggestions</h6>
+<pre><code class="language-bash">git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+</code></pre>
+<p>在 <code>.zshrc</code> 中启用：</p>
+<pre><code class="language-bash">plugins=(
+  git
+  zsh-autosuggestions
+)
+</code></pre>
+<h6 id="zsh-syntax-highlighting">zsh-syntax-highlighting</h6>
+<pre><code class="language-bash">git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+</code></pre>
+<p>在 <code>.zshrc</code> 中启用：</p>
+<pre><code class="language-bash">plugins=(
+  git
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+)
+source ~/.zshrc
+</code></pre>
+<h2 id="_3">常用包安装</h2>
+<h4 id="manim">Manim</h4>
+<p>Manim 是 Python 动画引擎，用于数学演示和可视化。</p>
+<pre><code class="language-bash">pkg install cmake
+pkg install tur-repo
+pkg install manim
+</code></pre>
+<p>如遇问题，可在 Ubuntu 环境中安装：</p>
+<pre><code class="language-bash">## 同时安装 Ubuntu
+pkg update &amp;&amp; pkg upgrade -y &amp;&amp; pkg install wget proot git -y
+cd ~ &amp;&amp; git clone https://github.com/MFDGaming/ubuntu-in-termux &amp;&amp; cd ubuntu-in-termux
+chmod +x ubuntu.sh &amp;&amp; ./ubuntu.sh -y &amp;&amp; ./startubuntu.sh
+
+## Ubuntu 内安装依赖
+apt-get update &amp;&amp; apt-get upgrade -y
+apt-get install -y sudo build-essential python3-dev libcairo2-dev libpango1.0-dev ffmpeg texlive texlive-latex-extra python3-pip python3-venv pipx
+pipx install manim
+
+## 生成动画
+manim --resolution 2560,1440 main.py
+</code></pre>
+<h4 id="mpv">mpv</h4>
+<p>mpv 是命令行音乐播放器：</p>
+<pre><code class="language-bash">pkg install mpv pulseaudio ffmpeg
+pulseaudio --start
+mpv --ao=pulse your_audio_file.mp3
+pkill mpv      ## 停止播放
+</code></pre>
+<h4 id="cava">cava（音频可视化）</h4>
+<pre><code class="language-bash">pkg install cava
+pulseaudio --start
+mpv --ao=pulse your_audio_file.mp3 &amp; cava
+</code></pre>
+<p><img alt="cava 音频可视化" src="https://raw.githubusercontent.com/aric6494/images/main/img/1738379894565.jpg" /></p>
+<p>配置文件：<code>~/.config/cava/config</code></p>
+<h4 id="yt-dlp">yt-dlp</h4>
+<p>yt-dlp 是命令行下载 YouTube 视频工具。</p>
+<pre><code class="language-bash">pkg update &amp;&amp; pkg upgrade -y
+pkg install python ffmpeg
+pip install yt-dlp
+</code></pre>
+<p>常用命令：</p>
+<pre><code class="language-bash">yt-dlp &lt;URL&gt;                         ## 下载视频
+yt-dlp -x &lt;URL&gt;                      ## 下载音频
+yt-dlp --skip-download --write-subs --write-auto-subs --sub-lang zh --sub-format srt -o &quot;transcript.%(ext)s&quot; '&lt;URL&gt;'
+## 下载无时间码字幕并清洗
+yt-dlp --skip-download --write-subs --write-auto-subs --sub-lang en --sub-format ttml -o &quot;transcript.en.ttml&quot; '&lt;URL&gt;' &amp;&amp; sed -e 's/&lt;[^&gt;]*&gt;//g' -e '/^[[:space:]]*$/d' transcript.en.ttml &gt; output.txt
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../english/grammar/%E5%8A%A8%E8%AF%8D/" class="btn btn-neutral float-left" title="动词"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../english/grammar/%E5%8A%A8%E8%AF%8D/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
