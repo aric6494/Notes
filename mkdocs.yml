@@ -8,3 +8,6 @@ nav:
       - Termux/termux.md 
 
 theme: material
+
+extra_css:
+  - stylesheets/extra.css
