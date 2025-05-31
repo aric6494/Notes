@@ -4,7 +4,8 @@ nav:
   - Termux:
       - Termux/termux.md 
   - Manim:
-      - Manim/三角函数.md 
+      - Manim/三角函数.md
+  - 数字工具: 数字工具.md
 
 theme:
   name: material
