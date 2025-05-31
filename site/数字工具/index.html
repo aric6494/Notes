@@ -1,0 +1,1330 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Manim/%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>数字工具 - aric6494's notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="aric6494&#39;s notes" class="md-header__button md-logo" aria-label="aric6494's notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            aric6494's notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              数字工具
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="aric6494&#39;s notes" class="md-nav__button md-logo" aria-label="aric6494's notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    aric6494's notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    介绍
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Termux
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Termux
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Termux/termux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Termux 的图形化界面
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Manim
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Manim
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Manim/%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    三角函数
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    数字工具
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    数字工具
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      笔记软件
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      云同步服务
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="云同步服务">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      坚果云
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infinicloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      infiniCLOUD
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      电子书阅读软件
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="电子书阅读软件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zotero" class="md-nav__link">
+    <span class="md-ellipsis">
+      zotero
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sumatrapdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      SumatraPDF
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      阅读
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#readera" class="md-nav__link">
+    <span class="md-ellipsis">
+      Readera
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#koreader" class="md-nav__link">
+    <span class="md-ellipsis">
+      KOReader
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#readest" class="md-nav__link">
+    <span class="md-ellipsis">
+      Readest
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      数字内容管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="数字内容管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#calibre" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calibre
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jellyfin" class="md-nav__link">
+    <span class="md-ellipsis">
+      jellyfin
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      信息获取
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="信息获取">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#follow" class="md-nav__link">
+    <span class="md-ellipsis">
+      follow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#readyou" class="md-nav__link">
+    <span class="md-ellipsis">
+      ReadYou
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#newsnow" class="md-nav__link">
+    <span class="md-ellipsis">
+      NewsNow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p2p" class="md-nav__link">
+    <span class="md-ellipsis">
+      P2P文件共享
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="P2P文件共享">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#qbittorent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Qbittorent
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      资源获取
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="资源获取">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      电子书
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      电影
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      视频播放器
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="视频播放器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#potplayer" class="md-nav__link">
+    <span class="md-ellipsis">
+      PotPlayer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vlc" class="md-nav__link">
+    <span class="md-ellipsis">
+      VLC
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      文件传输
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="文件传输">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#localsend" class="md-nav__link">
+    <span class="md-ellipsis">
+      LocalSend
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      任务管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="任务管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#super-productivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Super Productivity
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      工具
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="工具">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      PDF相关
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PDF相关">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ocr" class="md-nav__link">
+    <span class="md-ellipsis">
+      OCR
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-activation-scripts-mas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Microsoft Activation Scripts (MAS)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kopia" class="md-nav__link">
+    <span class="md-ellipsis">
+      kopia
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      笔记软件
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      云同步服务
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="云同步服务">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      坚果云
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infinicloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      infiniCLOUD
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      电子书阅读软件
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="电子书阅读软件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zotero" class="md-nav__link">
+    <span class="md-ellipsis">
+      zotero
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sumatrapdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      SumatraPDF
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      阅读
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#readera" class="md-nav__link">
+    <span class="md-ellipsis">
+      Readera
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#koreader" class="md-nav__link">
+    <span class="md-ellipsis">
+      KOReader
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#readest" class="md-nav__link">
+    <span class="md-ellipsis">
+      Readest
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      数字内容管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="数字内容管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#calibre" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calibre
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jellyfin" class="md-nav__link">
+    <span class="md-ellipsis">
+      jellyfin
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      信息获取
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="信息获取">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#follow" class="md-nav__link">
+    <span class="md-ellipsis">
+      follow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#readyou" class="md-nav__link">
+    <span class="md-ellipsis">
+      ReadYou
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#newsnow" class="md-nav__link">
+    <span class="md-ellipsis">
+      NewsNow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p2p" class="md-nav__link">
+    <span class="md-ellipsis">
+      P2P文件共享
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="P2P文件共享">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#qbittorent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Qbittorent
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      资源获取
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="资源获取">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      电子书
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      电影
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      视频播放器
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="视频播放器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#potplayer" class="md-nav__link">
+    <span class="md-ellipsis">
+      PotPlayer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vlc" class="md-nav__link">
+    <span class="md-ellipsis">
+      VLC
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      文件传输
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="文件传输">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#localsend" class="md-nav__link">
+    <span class="md-ellipsis">
+      LocalSend
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      任务管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="任务管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#super-productivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Super Productivity
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      工具
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="工具">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      PDF相关
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PDF相关">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ocr" class="md-nav__link">
+    <span class="md-ellipsis">
+      OCR
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-activation-scripts-mas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Microsoft Activation Scripts (MAS)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kopia" class="md-nav__link">
+    <span class="md-ellipsis">
+      kopia
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>数字工具</h1>
+
+<p>本篇文章记录本人经常使用的软件和工具等。</p>
+<h3 id="_1">笔记软件</h3>
+<p><a href="https://obsidian.md/">obsidian</a>是一个多平台的笔记软件。支持<strong>markdown语法</strong>和<strong>双链</strong>，同时也支持安装插件。</p>
+<p>软件本身同步需要付费，因此可以安装<strong>Remotely save插件</strong>实现在各个平台同步。</p>
+<h3 id="_2">云同步服务</h3>
+<h4 id="_3">坚果云</h4>
+<p>国内云同步软件，无限容量，但是每月只能上传1G流量，下载3G流量。用来同步笔记完全是足够的。</p>
+<h4 id="infinicloud">infiniCLOUD</h4>
+<p><a href="https://infini-cloud.net/en/">infiniCLOUD</a>创建账号后提供20G的云存储空间，不限制上传和下载流量。可以用来同步pdf电子书。</p>
+<h3 id="_4">电子书阅读软件</h3>
+<h4 id="zotero">zotero</h4>
+<p><a href="https://www.zotero.org/">Zotero</a>本身是一个开源文献管理软件，不过用来当pdf阅读器也是挺好用的，因为它支持windows，ipad，还有安卓，但是安卓还没有发布正式版，有测试版可以使用，在B站中能找到。zotero本身的只支持同步200MB的容量，因此可以使用上面提到的infiniCLOUD用来同步电子书，基本是够用了。zotero似乎并不支持epub格式的电子书。</p>
+<h4 id="sumatrapdf">SumatraPDF</h4>
+<p><a href="https://www.sumatrapdfreader.org/free-pdf-reader">SumatraPDF</a>电脑上的pdf阅读软件，界面简洁，不支持给epub格式的电子书添加注释。</p>
+<h4 id="_5">阅读</h4>
+<p><a href="https://gedoor.github.io/">阅读</a>是安卓上的开源电子书阅读软件，主要支持epub等电子书格式，支持同步。</p>
+<h4 id="readera">Readera</h4>
+<p><a href="https://readera.org/">Readera</a>安卓上的pdf阅读软件，也支持epub等电子书格式，需要付费才能有同步服务。</p>
+<h4 id="koreader">KOReader</h4>
+<p><a href="https://github.com/koreader/koreader">Koreader</a>安卓上开源电子书阅读软件，不支持全平台，支持墨水屏设备。刚使用时可能不太顺手，用一段时间后还是非常好用。</p>
+<h4 id="readest">Readest</h4>
+<p><a href="https://github.com/readest/readest">Readest</a>开源电子书阅读软件，支持全平台。未来还会支持与Koreader的笔记同步。</p>
+<h3 id="_6">数字内容管理</h3>
+<h4 id="calibre">Calibre</h4>
+<p><a href="https://calibre-ebook.com/">Calibre</a>是电脑上的开源的电子书管理软件，方便对书籍进行管理。支持 EPUB、PDF、MOBI、AZW3 等多种电子书格式之间的互相转换。</p>
+<h4 id="jellyfin">jellyfin</h4>
+<p><a href="https://jellyfin.org/">jellyfin</a>用于管理电影、电视剧、音乐、图片、家庭录像等多媒体文件的开源软件，可以建立一个自己的电影库。</p>
+<h3 id="_7">信息获取</h3>
+<h4 id="follow">follow</h4>
+<p><a href="https://github.com/RSSNext/Folo">follow</a>是一个开源的RSS阅读器，可以方便地订阅各类文章。支持Windows、macOS、Linux 等主流操作系统。</p>
+<h4 id="readyou">ReadYou</h4>
+<p><a href="https://github.com/Ashinch/ReadYou">ReadYou</a>是开源的安卓RSS阅读器，界面简洁。</p>
+<h4 id="newsnow">NewsNow</h4>
+<p><a href="https://github.com/ourongxing/newsnow">NewsNow</a>是一个开源的热门新闻聚合网站。</p>
+<h3 id="p2p">P2P文件共享</h3>
+<h4 id="qbittorent">Qbittorent</h4>
+<p><a href="https://www.qbittorrent.org/">qBittorrent</a> 是一款开源、跨平台的 BitTorrent 客户端，主要用于 P2P 文件（通过 <strong>种子文件</strong>（.torrent））共享。</p>
+<h3 id="_8">资源获取</h3>
+<h4 id="_9">电子书</h4>
+<p><a href="https://z-lib.id/">Zlibrary</a>和<a href="https://annas-archive.org/">安娜的档案</a>都是能够免费下载电子书的网站。</p>
+<h4 id="_10">电影</h4>
+<p><a href="https://yts.mx/">YTS</a>是一个可以免费下载电影种子文件的网站。可以使用Qbittorent客户端下载电影。既然有电影那么就少不了电影字幕的下载，<a href="https://srtku.com/">字幕库</a>是一个下载电影字幕的网站。</p>
+<h3 id="_11">视频播放器</h3>
+<h4 id="potplayer">PotPlayer</h4>
+<p><a href="https://potplayer.daum.net/">potplayer</a>是一款免费多媒体播放器，适用于Windows系统。</p>
+<h4 id="vlc">VLC</h4>
+<p><a href="https://www.videolan.org/">VLC</a>是一款免费、开源的跨平台多媒体播放器</p>
+<h3 id="_12">文件传输</h3>
+<h4 id="localsend">LocalSend</h4>
+<p><a href="https://localsend.org/">LocalSend</a>是一款免费、开源的跨平台文件传输工具，允许您通过本地网络在附近设备间安全地共享文件。</p>
+<h3 id="_13">任务管理</h3>
+<h4 id="super-productivity">Super Productivity</h4>
+<p><a href="https://super-productivity.com/">Super Productivity</a>是一款开源且免费的任务管理软件，也支持番茄钟和习惯追踪。</p>
+<h3 id="_14">工具</h3>
+<h4 id="pdf">PDF相关</h4>
+<h5 id="ocr">OCR</h5>
+<p><a href="https://ocrmypdf.readthedocs.io/en/latest/">OCRmyPDF</a> 是一个开源工具，可以将扫描的 PDF 或图像 PDF 转换为可搜索的文档。</p>
+<p>网上下载PDF格式的电子书通常是扫描版，不能添加注释和复制等操作。通过该工具可以转换为非扫描版。</p>
+<h4 id="microsoft-activation-scripts-mas">Microsoft Activation Scripts (MAS)</h4>
+<p><a href="https://massgrave.dev/">Microsoft Activation Scripts</a> 是一款开源的 Windows 和 Office 激活工具。</p>
+<p>可以用来激活不同windows和office的版本。</p>
+<h4 id="kopia">kopia</h4>
+<p><a href="https://kopia.io/">Kopia</a>是一个开源，能够快速和安全备份的软件，可以自定义自动备份的时间。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
