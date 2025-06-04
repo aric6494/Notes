@@ -476,6 +476,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#latex" class="md-nav__link">
+    <span class="md-ellipsis">
+      latex
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -782,6 +791,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#latex" class="md-nav__link">
+    <span class="md-ellipsis">
+      latex
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -993,6 +1011,21 @@ yt-dlp -x &lt;URL&gt;                      ## 下载音频
 yt-dlp --skip-download --write-subs --write-auto-subs --sub-lang zh --sub-format srt -o &quot;transcript.%(ext)s&quot; '&lt;URL&gt;'
 ## 下载无时间码字幕并清洗
 yt-dlp --skip-download --write-subs --write-auto-subs --sub-lang en --sub-format ttml -o &quot;transcript.en.ttml&quot; '&lt;URL&gt;' &amp;&amp; sed -e 's/&lt;[^&gt;]*&gt;//g' -e '/^[[:space:]]*$/d' transcript.en.ttml &gt; output.txt
+</code></pre>
+<h4 id="latex">latex</h4>
+<p>latex 可与 manim 结合创造有意思的数学动画。</p>
+<pre><code class="language-shell">pkg update &amp;&amp; pkg upgrade -y
+pkg install texlive-installer -y 
+termux-install-tl
+</code></pre>
+<p>到了上面的最后一步，termux 打开文字图形界面，然后你可以先输入 s，选择安装多大的包，这里推荐 basic，因为它包含了 latex。之后等待安装就行。不过如果想要运行 manim，还需要安装以下包：</p>
+<pre><code class="language-shell">tlmgr install standalone
+tlmgr install preview
+</code></pre>
+<p>不过并不支持中文。如果想要删除 latex，按照以下步骤：</p>
+<pre><code>rm -rf /data/data/com.termux/files/usr/bin/texlive
+rm -rf /data/data/com.termux/files/usr/share/texlive
+pkg uninstall texlive-installer
 </code></pre>
 
 
