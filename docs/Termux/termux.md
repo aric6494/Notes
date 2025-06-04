@@ -286,3 +286,29 @@ yt-dlp --skip-download --write-subs --write-auto-subs --sub-lang zh --sub-format
 ## 下载无时间码字幕并清洗
 yt-dlp --skip-download --write-subs --write-auto-subs --sub-lang en --sub-format ttml -o "transcript.en.ttml" '<URL>' && sed -e 's/<[^>]*>//g' -e '/^[[:space:]]*$/d' transcript.en.ttml > output.txt
 ```
+
+#### latex
+
+latex 可与 manim 结合创造有意思的数学动画。
+
+```shell
+pkg update && pkg upgrade -y
+pkg install texlive-installer -y 
+termux-install-tl
+```
+
+到了上面的最后一步，termux 打开文字图形界面，然后你可以先输入 s，选择安装多大的包，这里推荐 basic，因为它包含了 latex。之后等待安装就行。不过如果想要运行 manim，还需要安装以下包：
+
+```shell
+tlmgr install standalone
+tlmgr install preview
+```
+
+不过并不支持中文。如果想要删除 latex，按照以下步骤：
+
+```
+rm -rf /data/data/com.termux/files/usr/bin/texlive
+rm -rf /data/data/com.termux/files/usr/share/texlive
+pkg uninstall texlive-installer
+```
+
