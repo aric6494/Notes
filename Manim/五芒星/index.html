@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../../Termux/termux/">
+        <link rel="prev" href="../%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0/">
       
       
-        <link rel="next" href="../%E4%BA%94%E8%8A%92%E6%98%9F/">
+        <link rel="next" href="../../%E6%95%B0%E5%AD%97%E5%B7%A5%E5%85%B7/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>三角函数 - aric6494's notes</title>
+        <title>五芒星 - aric6494's notes</title>
       
     
     
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              三角函数
+              五芒星
             
           </span>
         </div>
@@ -323,6 +323,29 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    三角函数
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -338,7 +361,7 @@
   
   
   <span class="md-ellipsis">
-    三角函数
+    五芒星
     
   </span>
   
@@ -351,7 +374,7 @@
   
   
   <span class="md-ellipsis">
-    三角函数
+    五芒星
     
   </span>
   
@@ -393,29 +416,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../%E4%BA%94%E8%8A%92%E6%98%9F/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    五芒星
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -508,105 +508,59 @@
 
 
 
-  <h1>三角函数</h1>
+  <h1>五芒星</h1>
 
-<p>manim实现的六个三角函数。</p>
 <h3 id="_1">预览</h3>
 <video width="640" controls>
-  <source src="https://raw.githubusercontent.com/aric6494/music/main/video/TrigFunctions.mp4" type="video/mp4">
+  <source src="https://raw.githubusercontent.com/aric6494/music/main/video/Pentagram.mp4" type="video/mp4">
 </video>
 
 <h3 id="_2">代码</h3>
 <pre><code class="language-python">from manim import *
-import numpy as np
-import math
 
-class TrigFunctions(Scene):
+class Studying(Scene):
     def construct(self):
-        # 创建坐标轴
-        axes = Axes(
-            x_range=[-2 * np.pi, 2 * np.pi, np.pi / 2],
-            y_range=[-5, 5, 1],
-            axis_config={&quot;color&quot;: BLUE, &quot;include_ticks&quot;: True},
-            x_length=10,
-            y_length=6,
-            tips=True
+        circle = Circle(radius=0.81,color=BLUE_B)
+        self.play(Create(circle))
+        # 点的透明度为0，即看不到点
+        dot = Dot(point=[0.8,0,0],color=BLUE_B,fill_opacity=0)
+        self.play(FadeIn(dot))
+
+        # 五角星的五个点
+        points = VGroup()
+        R = 0.8
+        for k in range(5):
+            angle = k * (2 * PI * 2 / 5)  # 每个点间隔 144°（=2/5圈）
+            x = R * np.cos(angle)
+            y = R * np.sin(angle)
+            dot_k = dot.copy().move_to([x, y, 0])
+            points.add(dot_k)
+
+        # 第一个创建的点渐隐
+        self.play(FadeOut(dot))
+
+        # 五个点渐现
+        for point in points:
+            self.play(FadeIn(point),run_time=0.1)
+            self.wait(0.5)
+        # 五个点连成五角星  
+        hexagon = always_redraw(lambda:
+            Polygon(
+                *[point.get_center() for point in points],
+                stroke_width=2,
+                color=BLUE_B)
+                )
+        self.play(Create(hexagon),run_time=2)
+        self.wait(1)
+
+        # 旋转五芒星
+        self.play(
+            Rotating(VGroup(points,hexagon),
+            about_point=ORIGIN,
+            angle=4*TAU,
+            run_time=4,
+            rate_func=linear)
         )
-
-        # 标记 x 轴刻度
-        labels = [
-            (-2 * np.pi, r&quot;-2\pi&quot;),
-            (-3 * np.pi / 2, r&quot;-\frac{3\pi}{2}&quot;),
-            (-np.pi, r&quot;-\pi&quot;),
-            (-np.pi / 2, r&quot;-\frac{\pi}{2}&quot;),
-            (0, &quot;0&quot;),
-            (np.pi / 2, r&quot;\frac{\pi}{2}&quot;),
-            (np.pi, r&quot;\pi&quot;),
-            (3 * np.pi / 2, r&quot;\frac{3\pi}{2}&quot;),
-            (2 * np.pi, r&quot;2\pi&quot;)
-        ]
-        x_labels = VGroup(
-            *[MathTex(tex).next_to(axes.c2p(x_val, 0), DOWN * 0.5) for x_val, tex in labels]
-        )
-
-        self.play(Create(axes), Write(x_labels))
-
-        # 创建正切和正割的渐近线
-        asymptote_positions = np.arange(-3 * np.pi / 2, 3 * np.pi / 2 + np.pi, np.pi)
-        asymptotes = VGroup(*[
-            DashedLine(
-                start=axes.c2p(pos, -5),
-                end=axes.c2p(pos, 5),
-                color=GRAY
-            ) for pos in asymptote_positions
-        ])
-        self.play(Create(asymptotes))
-
-        # 正弦函数
-        sin_graph = axes.plot(lambda x: np.sin(x), color=RED, x_range=[-2 * np.pi, 2 * np.pi])
-        sin_label = MathTex(&quot;\\sin(x)&quot;).next_to(axes.c2p(2 * np.pi, np.sin(2 * np.pi)), UP).set_color(RED)
-        self.play(Create(sin_graph), Write(sin_label))
-        self.wait(1)
-        self.play(FadeOut(sin_graph), FadeOut(sin_label))
-
-        # 余弦函数
-        cos_graph = axes.plot(lambda x: np.cos(x), color=GREEN, x_range=[-2 * np.pi, 2 * np.pi])
-        cos_label = MathTex(&quot;\\cos(x)&quot;).next_to(axes.c2p(2 * np.pi, np.cos(2 * np.pi)), DOWN).set_color(GREEN)
-        self.play(Create(cos_graph), Write(cos_label))
-        self.wait(1)
-        self.play(FadeOut(cos_graph), FadeOut(cos_label))
-
-        # 正切函数
-        tan_graph = axes.plot(lambda x: np.tan(x), color=YELLOW, x_range=[-np.pi / 2 + 0.3, np.pi / 2 - 0.3])
-        tan_label = MathTex(&quot;\\tan(x)&quot;).next_to(axes.c2p(np.pi / 4, np.tan(np.pi / 4)), RIGHT).set_color(YELLOW)
-        self.play(Create(tan_graph), Write(tan_label))
-        self.wait(1)
-        self.play(FadeOut(tan_graph), FadeOut(tan_label))
-
-        # 余切函数
-        cot_graph = axes.plot(lambda x: 1 / np.tan(x), color=ORANGE, x_range=[-np.pi + 0.3, -0.3])
-        cot_label = MathTex(&quot;\\cot(x)&quot;).next_to(axes.c2p(-np.pi / 4, 1 / np.tan(-np.pi / 4)), LEFT).set_color(ORANGE)
-        self.play(Create(cot_graph), Write(cot_label))
-        self.wait(1)
-        self.play(FadeOut(cot_graph), FadeOut(cot_label))
-
-        # 正割函数
-        sec_graph = axes.plot(lambda x: 1 / np.cos(x), color=PURPLE, x_range=[-np.pi / 2 + 0.3, np.pi / 2 - 0.3])
-        sec_label = MathTex(&quot;\\sec(x)&quot;).next_to(axes.c2p(np.pi / 3, 1 / np.cos(np.pi / 3)), UP).set_color(PURPLE)
-        self.play(Create(sec_graph), Write(sec_label))
-        self.wait(1)
-        self.play(FadeOut(sec_graph), FadeOut(sec_label))
-
-        # 余割函数
-        csc_graph = axes.plot(lambda x: 1 / np.sin(x), color=TEAL, x_range=[-np.pi + 0.3, -0.3])
-        csc_label = MathTex(&quot;\\csc(x)&quot;).next_to(axes.c2p(-np.pi / 3, 1 / np.sin(-np.pi / 3)), DOWN).set_color(TEAL)
-        self.play(Create(csc_graph), Write(csc_label))
-        self.wait(1)
-        self.play(FadeOut(csc_graph), FadeOut(csc_label))
-
-        # 结束动画
-        self.play(FadeOut(asymptotes), FadeOut(x_labels), FadeOut(axes))
-        self.wait(2)
 </code></pre>
 
 
