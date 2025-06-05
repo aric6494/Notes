@@ -5,6 +5,7 @@ nav:
       - Termux/termux.md 
   - Manim:
       - Manim/三角函数.md
+      - Manim/五芒星.md
   - 数字工具: 数字工具.md
 
 theme:
