@@ -7,6 +7,8 @@ nav:
       - Manim/三角函数.md
       - Manim/五芒星.md
   - 数字工具: 数字工具.md
+  - Ubuntu:
+      - Ubuntu/基础.md
 
 theme:
   name: material
