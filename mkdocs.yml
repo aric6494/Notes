@@ -9,6 +9,9 @@ nav:
   - 数字工具: 数字工具.md
   - Ubuntu:
       - Ubuntu/基础.md
+  - 动漫:
+      - 动漫/xindong.json
+      - 动漫/luogong.json
 
 theme:
   name: material
